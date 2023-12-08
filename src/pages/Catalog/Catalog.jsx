@@ -3,6 +3,7 @@ import CarsList from "../../components/CarsList/CarsList";
 import Filters from "../../components/Filters/Filters";
 import { useEffect } from "react";
 import { fetchCars } from "../../redux/operations";
+import LoadMore from "../../components/LoadMore/LoadMore";
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Catalog = () => {
       <div className="container">
         <Filters />
         <CarsList />
+        <LoadMore />
       </div>
     </main>
   );

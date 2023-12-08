@@ -47,7 +47,6 @@ const CarsList = () => {
           );
         })}
       </StyledUl>
-      <button>Load more</button>
     </section>
   );
 };
