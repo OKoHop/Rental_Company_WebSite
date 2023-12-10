@@ -17,7 +17,6 @@ const CarsList = () => {
   const cars = useSelector(getCars);
   const dispatch = useDispatch();
   const getFavorite = useSelector(getFavorites);
-
   const city = (car) => {
     const city = car.address.split(",");
     return city[1];
@@ -26,6 +25,13 @@ const CarsList = () => {
   const country = (car) => {
     const country = car.address.split(",");
     return country[2];
+  };
+
+  const handleFavorite = (car) => {
+    if (!getFavorite.includes(car)) {
+      return dispatch(addToFavorite(car));
+    }
+    return dispatch(removeFromFavorite(car));
   };
 
   return (
@@ -41,7 +47,7 @@ const CarsList = () => {
                   width="18"
                   height="18"
                   fill="none"
-                  onClick={() => dispatch(removeFromFavorite(car))}
+                  onClick={() => handleFavorite(car)}
                 >
                   <path
                     stroke="#fff"
