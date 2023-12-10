@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { nextpage } from "../../redux/slice";
+import { nextpage } from "../../redux/addCars/slice";
 
 const LoadMore = () => {
   const dispatch = useDispatch();

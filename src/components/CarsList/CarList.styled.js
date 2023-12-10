@@ -36,12 +36,13 @@ export const StyledSvg = styled.svg`
   position: absolute;
   top: 14px;
   right: 14px;
-  z-index: 999;
 
-  &:hover {
-    fill: #3470ff;
-  }
   &:focus {
     fill: #3470ff;
+    stroke: #3470ff;
+  }
+  &:hover {
+    fill: #3470ff;
+    stroke: #3470ff;
   }
 `;
