@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAction, createSlice } from "@reduxjs/toolkit";
 import { fetchCars } from "./operations";
 
 const initialState = {
@@ -17,6 +17,8 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
+export const nextpage = createAction("cars/nextpage");
+
 const sliceCars = createSlice({
   name: "cars",
   initialState,
@@ -25,10 +27,13 @@ const sliceCars = createSlice({
       .addCase(fetchCars.pending, handlePending)
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.cars = action.payload;
+        state.cars.push(...action.payload);
         state.error = null;
       })
-      .addCase(fetchCars.rejected, handleRejected);
+      .addCase(fetchCars.rejected, handleRejected)
+      .addCase(nextpage, (state, action) => {
+        state.page = state.page + action.payload;
+      });
   },
 });
 

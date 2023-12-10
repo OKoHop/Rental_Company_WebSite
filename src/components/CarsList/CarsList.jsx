@@ -1,13 +1,6 @@
 import { useSelector } from "react-redux";
 import { getCars } from "../../redux/selector";
-import {
-  StyledUl,
-  StyledLi,
-  StyledDiv,
-  StyledImg,
-  StyledSvg,
-} from "./CarList.styled";
-import svg from "../../images/Vector.svg";
+import { StyledUl, StyledLi, StyledDiv, StyledImg } from "./CarList.styled";
 
 const CarsList = () => {
   const cars = useSelector(getCars);
@@ -30,9 +23,6 @@ const CarsList = () => {
             <StyledLi key={car.id}>
               <StyledDiv>
                 <StyledImg src={car.img} alt="car_img" />
-                <StyledSvg>
-                  <use href={svg}></use>
-                </StyledSvg>
               </StyledDiv>
               <p>
                 {car.make} {car.model}, {car.year}

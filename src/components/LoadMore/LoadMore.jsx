@@ -1,10 +1,14 @@
-import { useSelector } from "react-redux";
-import { getPage } from "../../redux/selector";
+import { useDispatch } from "react-redux";
+import { nextpage } from "../../redux/slice";
 
 const LoadMore = () => {
-  const page = useSelector(getPage);
+  const dispatch = useDispatch();
 
-  return <button type="button">Load more</button>;
+  return (
+    <button type="button" onClick={() => dispatch(nextpage(1))}>
+      Load more
+    </button>
+  );
 };
 
 export default LoadMore;

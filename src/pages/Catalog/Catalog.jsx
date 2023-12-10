@@ -1,16 +1,18 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CarsList from "../../components/CarsList/CarsList";
 import Filters from "../../components/Filters/Filters";
 import { useEffect } from "react";
 import { fetchCars } from "../../redux/operations";
 import LoadMore from "../../components/LoadMore/LoadMore";
+import { getPage } from "../../redux/selector";
 
 const Catalog = () => {
   const dispatch = useDispatch();
+  const page = useSelector(getPage);
 
   useEffect(() => {
-    dispatch(fetchCars());
-  }, [dispatch]);
+    dispatch(fetchCars(page));
+  }, [dispatch, page]);
 
   return (
     <main>
