@@ -99,11 +99,11 @@ export const ModalComp = ({ modalIsOpen, closeModal, car }) => {
           return <StyledLi1 key={nanoid()}>{rentalConditions}</StyledLi1>;
         })}
         <StyledLi1 key={nanoid()}>
-          Mileage: <SpanStyled>{car?.mileage}</SpanStyled>{" "}
+          Mileage:{" "}
+          <SpanStyled>{car?.mileage.toLocaleString("de-DE")}</SpanStyled>{" "}
         </StyledLi1>
         <StyledLi1 key={nanoid()}>
-          Price:{" "}
-          <SpanStyled>{car?.rentalPrice.toLocaleString("en-Us")}</SpanStyled>
+          Price: <SpanStyled>{car?.rentalPrice}</SpanStyled>
         </StyledLi1>
       </ListAccessories>
       <StyledLink href="tel: +380730000000">Rental car</StyledLink>
