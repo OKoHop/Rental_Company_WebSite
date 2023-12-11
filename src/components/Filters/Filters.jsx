@@ -14,20 +14,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getBrands } from "../../redux/filters/operation";
 import { brands } from "../../redux/filters/selector";
 import { nanoid } from "nanoid";
-// import { getCars } from "../../redux/addCars/selector";
 
 const Filters = () => {
   const dispatch = useDispatch();
   const carBrands = useSelector(brands);
-  // const getCar = useSelector(getCars);
 
   useEffect(() => {
     dispatch(getBrands());
   }, [dispatch]);
-
-  // const filterCars = (brand) => {
-  //   console.log(brand);
-  // };
 
   return (
     <Formik
