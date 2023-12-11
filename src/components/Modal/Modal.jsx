@@ -1,3 +1,3 @@
-const Modal = () => {};
+const ModalWindow = () => {};
 
-export default Modal;
+export default ModalWindow;

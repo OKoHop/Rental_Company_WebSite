@@ -76,6 +76,7 @@ export const StyledP = styled.p`
 
 export const StyledSpan = styled.span`
   color: #3470ff;
+  font-family: "Inter";
 `;
 
 export const StyledDv = styled.div`
