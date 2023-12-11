@@ -89,7 +89,9 @@ export const SpanStyled = styled.span`
   color: #3470ff;
 `;
 
-export const StyledRentBtn = styled.button`
+export const StyledLink = styled.a`
+  display: inline-block;
+  box-sizing: border-box;
   width: 168px;
   height: 44px;
   border-radius: 12px;
@@ -97,7 +99,7 @@ export const StyledRentBtn = styled.button`
   background-color: #3470ff;
   padding: 12px 50px;
   margin-top: 24px;
-  font-weigth: 600;
+  font-weight: 600;
   font-size: 14px;
   line-height: 1.42;
   color: #ffffff;

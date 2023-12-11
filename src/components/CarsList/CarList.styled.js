@@ -66,7 +66,7 @@ export const StyledBtn = styled.button`
 
 export const ContentDiv = styled.div`
   width: 274px;
-  height: 130px;
+  height: 150px;
   overflow: hidden;
 `;
 

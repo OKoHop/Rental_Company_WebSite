@@ -8,9 +8,9 @@ import {
   StyledDescription,
   StyledImgModal,
   StyledLi1,
+  StyledLink,
   StyledModalP,
   StyledModalP1,
-  StyledRentBtn,
   StyledRenta,
 } from "./Modal.styled";
 import { StyledSpan } from "../CarsList/CarList.styled";
@@ -68,24 +68,24 @@ export const ModalComp = ({ modalIsOpen, closeModal, car }) => {
           />
         </svg>
       </StyledBtnModal>
-      <StyledImgModal src={car.img} alt="carImg" />
+      <StyledImgModal src={car?.img} alt="carImg" />
       <StyledModalP>
-        {car.make} <StyledSpan>{car.model}</StyledSpan> , {car.year}
+        {car?.make} <StyledSpan>{car?.model}</StyledSpan> , {car?.year}
       </StyledModalP>
       <StyledModalP1>
-        {city(car)} | {country(car)} | id: {car.id} | Year:
-        {car.year} | Type: {car.type} | Fuel Consumption:
-        {car.fuelConsumption} | Engine size: {car.engineSize}
+        {city(car)} | {country(car)} | id: {car?.id} | Year:
+        {car?.year} | Type: {car?.type} | Fuel Consumption:
+        {car?.fuelConsumption} | Engine size: {car?.engineSize}
       </StyledModalP1>
-      <StyledDescription>{car.description}</StyledDescription>
+      <StyledDescription>{car?.description}</StyledDescription>
       <StyledAccessories>Accessories and functionalities:</StyledAccessories>
       <ListAccessories>
-        {car.accessories.map((accessories) => {
+        {car?.accessories.map((accessories) => {
           return (
             <AccessoriesItem key={nanoid()}>{accessories} |</AccessoriesItem>
           );
         })}
-        {car.functionalities.map((functionalities) => {
+        {car?.functionalities.map((functionalities) => {
           return (
             <AccessoriesItem key={nanoid()}>
               {functionalities} |
@@ -95,20 +95,18 @@ export const ModalComp = ({ modalIsOpen, closeModal, car }) => {
       </ListAccessories>
       <StyledRenta>Rental Conditions:</StyledRenta>
       <ListAccessories>
-        {car.rentalConditions.split("\n").map((rentalConditions) => {
+        {car?.rentalConditions.split("\n").map((rentalConditions) => {
           return <StyledLi1 key={nanoid()}>{rentalConditions}</StyledLi1>;
         })}
         <StyledLi1 key={nanoid()}>
-          Mileage: <SpanStyled>{car.mileage}</SpanStyled>{" "}
+          Mileage: <SpanStyled>{car?.mileage}</SpanStyled>{" "}
         </StyledLi1>
         <StyledLi1 key={nanoid()}>
           Price:{" "}
-          <SpanStyled>{car.rentalPrice.toLocaleString("en-Us")}</SpanStyled>
+          <SpanStyled>{car?.rentalPrice.toLocaleString("en-Us")}</SpanStyled>
         </StyledLi1>
       </ListAccessories>
-      <StyledRentBtn onClick={() => console.log(`${car.make} ${car.model} `)}>
-        Rental car
-      </StyledRentBtn>
+      <StyledLink href="tel: +380730000000">Rental car</StyledLink>
     </Modal>
   );
 };
