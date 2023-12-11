@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Rental_Company_WebSite/static/css/main.b997526a.css",
-    "main.js": "/Rental_Company_WebSite/static/js/main.65a20cd8.js",
+    "main.js": "/Rental_Company_WebSite/static/js/main.f4d71cb9.js",
     "index.html": "/Rental_Company_WebSite/index.html",
     "main.b997526a.css.map": "/Rental_Company_WebSite/static/css/main.b997526a.css.map",
-    "main.65a20cd8.js.map": "/Rental_Company_WebSite/static/js/main.65a20cd8.js.map"
+    "main.f4d71cb9.js.map": "/Rental_Company_WebSite/static/js/main.f4d71cb9.js.map"
   },
   "entrypoints": [
     "static/css/main.b997526a.css",
-    "static/js/main.65a20cd8.js"
+    "static/js/main.f4d71cb9.js"
   ]
 }
