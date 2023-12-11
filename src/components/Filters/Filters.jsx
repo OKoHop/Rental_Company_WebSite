@@ -1,25 +1,43 @@
-import { Field, Form, Formik } from "formik";
+import { Formik } from "formik";
+import {
+  StyledBrand,
+  StyledBtn,
+  StyledForm,
+  StyledLabel,
+  StyledLeftKm,
+  StyledP,
+  StyledPrice,
+  StyledRightKm,
+} from "./Filters.styled";
 
 const Filters = () => {
   return (
     <Formik>
-      <Form>
-        <label>Car brand</label>
-        <Field name="carBrand" as="select" placeholder="Enter the text">
-          <option value="default">Enter the text</option>
-        </Field>
+      <StyledForm>
+        <StyledLabel>
+          <StyledP>Car brand</StyledP>
+          <StyledBrand name="carBrand" as="select" placeholder="Enter the text">
+            <option value="default">Enter the text</option>
+          </StyledBrand>
+        </StyledLabel>
 
-        <label>Price/ 1 hour</label>
-        <Field name="price" as="select">
-          <option value="to$">To $</option>
-        </Field>
+        <StyledLabel>
+          <StyledP>Price/ 1 hour</StyledP>
+          <StyledPrice name="price" as="select">
+            <option value="to$">To $</option>
+          </StyledPrice>
+        </StyledLabel>
 
-        <label>Car mileage/ km</label>
-        <Field name="mileageFrom" placeholder="From" />
-        <Field name="mileageTo" placeholder="To" />
+        <StyledLabel>
+          <StyledP>Car mileage/ km</StyledP>
+          <div>
+            <StyledLeftKm name="mileageFrom" placeholder="From" />
+            <StyledRightKm name="mileageTo" placeholder="To" />
+          </div>
+        </StyledLabel>
 
-        <button type="submit">Search</button>
-      </Form>
+        <StyledBtn type="submit">Search</StyledBtn>
+      </StyledForm>
     </Formik>
   );
 };

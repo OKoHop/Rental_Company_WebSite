@@ -5,9 +5,14 @@ import {
   removeFromFavorite,
 } from "../../redux/addToFavorites/slice";
 import {
+  ContentDiv,
+  StyledBtn,
   StyledDiv,
+  StyledDv,
   StyledImg,
   StyledLi,
+  StyledP,
+  StyledSpan,
   StyledSvg,
   StyledUl,
 } from "./CarList.styled";
@@ -41,6 +46,7 @@ export const FavoriteList = () => {
             <StyledDiv>
               <StyledImg src={car.img} alt="car_img" />
               <StyledSvg
+                className={getFavoriteCars.includes(car) ? "isActive" : ""}
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
                 height="18"
@@ -48,7 +54,6 @@ export const FavoriteList = () => {
                 onClick={() => handleFavorite(car)}
               >
                 <path
-                  stroke="#fff"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeOpacity=".8"
@@ -57,15 +62,19 @@ export const FavoriteList = () => {
                 />
               </StyledSvg>
             </StyledDiv>
-            <p>
-              {car.make} {car.model}, {car.year}
-            </p>
-            <p>{car.rentalPrice}</p>
-            <p>
-              {city(car)} | {country(car)} | {car.rentalCompany} | {car.type}|{" "}
-              {car.model} | {car.id} | {car.functionalities[0]}
-            </p>
-            <button>Learn More</button>
+            <ContentDiv>
+              <StyledDv>
+                <p>
+                  {car.make} <StyledSpan>{car.model}</StyledSpan> , {car.year}
+                </p>
+                <p>{car.rentalPrice}</p>
+              </StyledDv>
+              <StyledP>
+                {city(car)} | {country(car)} | {car.rentalCompany} | {car.type}|{" "}
+                {car.model} | {car.id} | {car.functionalities[0]}
+              </StyledP>
+            </ContentDiv>
+            <StyledBtn>Learn More</StyledBtn>
           </StyledLi>
         );
       })}

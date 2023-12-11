@@ -6,6 +6,11 @@ import {
   StyledDiv,
   StyledImg,
   StyledSvg,
+  StyledBtn,
+  ContentDiv,
+  StyledP,
+  StyledSpan,
+  StyledDv,
 } from "./CarList.styled";
 import {
   addToFavorite,
@@ -43,6 +48,7 @@ const CarsList = () => {
               <StyledDiv>
                 <StyledImg src={car.img} alt="car_img" />
                 <StyledSvg
+                  className={getFavorite.includes(car) ? "isActive" : ""}
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
                   height="18"
@@ -50,7 +56,6 @@ const CarsList = () => {
                   onClick={() => handleFavorite(car)}
                 >
                   <path
-                    stroke="#fff"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeOpacity=".8"
@@ -59,15 +64,19 @@ const CarsList = () => {
                   />
                 </StyledSvg>
               </StyledDiv>
-              <p>
-                {car.make} {car.model}, {car.year}
-              </p>
-              <p>{car.rentalPrice}</p>
-              <p>
-                {city(car)} | {country(car)} | {car.rentalCompany} | {car.type}|{" "}
-                {car.model} | {car.id} | {car.functionalities[0]}
-              </p>
-              <button>Learn More</button>
+              <ContentDiv>
+                <StyledDv>
+                  <p>
+                    {car.make} <StyledSpan>{car.model}</StyledSpan> , {car.year}
+                  </p>
+                  <p>{car.rentalPrice}</p>
+                </StyledDv>
+                <StyledP>
+                  {city(car)} | {country(car)} | {car.rentalCompany} |{" "}
+                  {car.type}| {car.model} | {car.id} | {car.functionalities[0]}
+                </StyledP>
+              </ContentDiv>
+              <StyledBtn>Learn More</StyledBtn>
             </StyledLi>
           );
         })}

@@ -18,7 +18,6 @@ export const StyledDiv = styled.div`
   width: 274px;
   height: 268px;
   border-radius: 14px;
-  border: 1px solid;
   position: relative;
 `;
 
@@ -37,6 +36,8 @@ export const StyledSvg = styled.svg`
   top: 14px;
   right: 14px;
 
+  stroke: #ffffff;
+
   &:focus {
     fill: #3470ff;
     stroke: #3470ff;
@@ -45,4 +46,41 @@ export const StyledSvg = styled.svg`
     fill: #3470ff;
     stroke: #3470ff;
   }
+`;
+
+export const StyledBtn = styled.button`
+  width: 274px;
+  height: 44px;
+  background-color: #0b44cd;
+  border: inherit;
+  border-radius: 12px;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #3470ff;
+  }
+  &:focus {
+    background-color: #3470ff;
+  }
+`;
+
+export const ContentDiv = styled.div`
+  width: 274px;
+  height: 130px;
+  overflow: hidden;
+`;
+
+export const StyledP = styled.p`
+  text-overflow: ellipsis;
+`;
+
+export const StyledSpan = styled.span`
+  color: #3470ff;
+`;
+
+export const StyledDv = styled.div`
+  margin-top: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
 `;

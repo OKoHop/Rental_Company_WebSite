@@ -1,8 +1,11 @@
 @import-normalize;
 
 body {
-  font-family: sans-serif;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
+  color: #121417;
 }
 
 h1,
@@ -28,8 +31,17 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 1184px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.isActive {
+  fill: #3470ff;
+  stroke: #3470ff;
 }
